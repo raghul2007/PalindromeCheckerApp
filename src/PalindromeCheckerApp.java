@@ -18,7 +18,21 @@ public class PalindromeCheckerApp {
                 break;
             }
         }
+// UC3 - Reverse String Based Palindrome
+        System.out.println("\n--- UC3: Reverse String Check ---");
 
+        String input3 = "level";
+        String reversed = "";
+
+        for (int i = input3.length() - 1; i >= 0; i--) {
+            reversed += input3.charAt(i);
+        }
+
+        if (input3.equals(reversed)) {
+            System.out.println(input3 + " is a Palindrome.");
+        } else {
+            System.out.println(input3 + " is NOT a Palindrome.");
+        }
         if (isPalindrome) {
             System.out.println(input + " is a Palindrome.");
         } else {
