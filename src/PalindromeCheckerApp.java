@@ -1,4 +1,5 @@
 import java.util.Stack;
+import java.util.*;
 public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
@@ -76,6 +77,50 @@ public class PalindromeCheckerApp {
 
         System.out.println("Input: " + input5);
         System.out.println("Is Palindrome? " + isPalindrome5);
+        // UC6 - Queue + Stack
+        System.out.println("\n--- UC6: Queue + Stack Check ---");
+
+        String input6 = "civic";
+        Queue<Character> queue = new LinkedList<>();
+        Stack<Character> stack6 = new Stack<>();
+
+        for (char c : input6.toCharArray()) {
+            queue.add(c);
+            stack6.push(c);
+        }
+
+        boolean isPalindrome6 = true;
+
+        while (!queue.isEmpty()) {
+            if (!queue.remove().equals(stack6.pop())) {
+                isPalindrome6 = false;
+                break;
+            }
+        }
+
+        System.out.println("Input: " + input6);
+        System.out.println("Is Palindrome? " + isPalindrome6);
+        // UC7 - Deque Based
+        System.out.println("\n--- UC7: Deque Optimized Check ---");
+
+        String input7 = "refer";
+        Deque<Character> deque = new ArrayDeque<>();
+
+        for (char c : input7.toCharArray()) {
+            deque.add(c);
+        }
+
+        boolean isPalindrome7 = true;
+
+        while (deque.size() > 1) {
+            if (!deque.removeFirst().equals(deque.removeLast())) {
+                isPalindrome7 = false;
+                break;
+            }
+        }
+
+        System.out.println("Input: " + input7);
+        System.out.println("Is Palindrome? " + isPalindrome7);
         if (isPalindrome) {
             System.out.println(input + " is a Palindrome.");
         } else {
