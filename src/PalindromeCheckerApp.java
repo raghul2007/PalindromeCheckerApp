@@ -33,6 +33,27 @@ public class PalindromeCheckerApp {
         } else {
             System.out.println(input3 + " is NOT a Palindrome.");
         }
+        // UC4 - Character Array Based
+        System.out.println("\n--- UC4: Char Array Check ---");
+
+        String input4 = "radar";
+        char[] chars = input4.toCharArray();
+
+        int start = 0;
+        int end = chars.length - 1;
+        boolean isPalindrome4 = true;
+
+        while (start < end) {
+            if (chars[start] != chars[end]) {
+                isPalindrome4 = false;
+                break;
+            }
+            start++;
+            end--;
+        }
+
+        System.out.println("Input: " + input4);
+        System.out.println("Is Palindrome? " + isPalindrome4);
         if (isPalindrome) {
             System.out.println(input + " is a Palindrome.");
         } else {
